@@ -1,0 +1,73 @@
+/* General Styles for the entire app */
+.App {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  /* Light gray background */
+  margin: 0;
+}
+
+/* Chatbot toggle button */
+.chatbot-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0352a8;
+  color: black;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.chatbot-button i {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  color: white;
+}
+
+.chatbot-button:hover {
+  background-color: #0352a8;
+  ;
+}
+
+/* Container for chatbot when it opens above the button */
+.chatbot-container-above {
+  position: fixed;
+  bottom: 80px;
+  /* Adjust this value to make the chatbot appear just above the button */
+  right: 20px;
+  width: 100%;
+  /* Make it responsive */
+  max-width: 350px;
+  /* Set a maximum width to prevent overflow */
+  /* height: 400px; Set a fixed height for the chatbot */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  /* Allows scrolling inside the chatbot if content exceeds height */
+  box-sizing: border-box;
+  /* Ensures padding is included in the width */
+}
+
+/* Make sure the chatbot does not overflow on small screens */
+@media (max-width: 400px) {
+  .chatbot-container-above {
+    width: 100%;
+    max-width: 100%;
+    bottom: 60px;
+    /* Adjust if needed for mobile screens */
+  }
+}
+
+/* Prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+}
